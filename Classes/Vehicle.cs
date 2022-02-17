@@ -18,7 +18,7 @@ namespace Parking_System.Classes
         private List<Participant> _participants = new List<Participant>() { }; //RelationShip
 
 
-        public string PlateNumber { get { return _plateNumber; } }
+
 
         public Vehicle(string plateNumber, string brandName, string subCategory, string color, DateTime validFrom, DateTime validTo) { 
             this._plateNumber = plateNumber;
@@ -28,6 +28,7 @@ namespace Parking_System.Classes
             this._validFrom = validFrom;
             this._validTo = validTo;
         }
+        public string PlateNumber { get { return _plateNumber; } }
 
         public Boolean Presence { get { return _presence; } }
         public Boolean CheckValidation()

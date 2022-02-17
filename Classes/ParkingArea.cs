@@ -16,7 +16,10 @@ namespace Parking_System.Classes
         private List<Terminal> terminals = new List<Terminal>() { }; //RelationShip
         private List<ParkingTransaction> parkingTransactions = new List<ParkingTransaction> { };
         private List<Tariff> tariff = new List<Tariff>() { }; //RelationShip//RelationShip
-
+        /*
+         Note : 1) vehicles VS registered Vehicles ?
+        2) How to transform 1...* or 0...* ? 
+        */
         public ParkingArea(string name)
         {
               _name = name;

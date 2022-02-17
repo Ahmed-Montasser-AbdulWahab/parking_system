@@ -10,7 +10,7 @@ namespace Parking_System.Classes
     {
         private string _cID;
         private int _terminalID;
-        private Boolean _result;
+        private Boolean _result; //Granted:1 , NotGranted:0 
         private DateTime _dateTime;
 
         public ParkingTransaction(string cID, int terminalID, Boolean result, DateTime dateTime) {
