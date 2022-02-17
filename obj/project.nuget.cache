@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kcDRn+D6lel4WrLTIYKHvEh5qXQuSbR2dW8M6ntinwvx59LEwe+T/W40zU7+hJa4ucwe4EjTU6HyJApsDDxvnQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ahmed\\Documents\\Visual Studio 2022\\Projects\\Parking System\\Parking System.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
