@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace Parking_System.Classes
 {
-    internal class ParkingTransaction
+    public class ParkingTransaction
     {
+        private string _cID;
+        private int _terminalID;
+        private Boolean _result;
+        private DateTime _dateTime;
+
+        public ParkingTransaction(string cID, int terminalID, Boolean result, DateTime dateTime) {
+            this._cID = cID;
+            this._terminalID = terminalID;
+            this._result = result;
+            this._dateTime = dateTime;
+        }
     }
 }

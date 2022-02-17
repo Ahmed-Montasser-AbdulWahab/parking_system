@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parking_System.Classes
 {
-    internal class ParkingArea
+    public class ParkingArea
     {
     }
 }
