@@ -9,20 +9,20 @@ namespace Parking_System.Classes
     public class Gate
     {
         //ClosedState => 0 ,OpenedState => 1
-        private Boolean state = false;
-        public Boolean State { get { return state; } }
+        private Boolean _state = false;
+        public Boolean State { get { return _state; } }
 
-        public Gate() { state = false; }
+        public Gate() { _state = false; }
         public Boolean Open()
         {
-            state = true;
-            return this.state;
+            _state = true;
+            return this._state;
         }
 
         public Boolean Close()
         {
-            state = false;
-            return this.state;
+            _state = false;
+            return this._state;
         }
     }
 }
