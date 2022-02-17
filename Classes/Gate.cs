@@ -12,6 +12,7 @@ namespace Parking_System.Classes
         private Boolean state = false;
         public Boolean State { get { return state; } }
 
+        public Gate() { state = false; }
         public Boolean Open()
         {
             state = true;
