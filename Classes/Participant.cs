@@ -11,7 +11,7 @@ namespace Parking_System.Classes
         private int _participantID;
         private string _participantName;
         private string _faceID;
-
+        private List<Vehicle> _vehicles = new List<Vehicle>() { }; //RelationShip
         public Participant(int id, string name, string f_id)
         {
             _participantID = id;

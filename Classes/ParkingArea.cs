@@ -10,6 +10,13 @@ namespace Parking_System.Classes
     {
         private string _name;
 
+        //Relationships
+        private List<Vehicle> vehicles = new List<Vehicle>() { }; //RelationShip
+        private List<Operator> operators = new List<Operator>() { }; //RelationShip
+        private List<Terminal> terminals = new List<Terminal>() { }; //RelationShip
+        private List<ParkingTransaction> parkingTransactions = new List<ParkingTransaction> { };
+        private List<Tariff> tariff = new List<Tariff>() { }; //RelationShip//RelationShip
+
         public ParkingArea(string name)
         {
               _name = name;

@@ -15,6 +15,7 @@ namespace Parking_System.Classes
         private DateTime _validFrom;
         private DateTime _validTo;
         private Boolean _presence = false ;
+        private List<Participant> _participants = new List<Participant>() { }; //RelationShip
 
 
         public string PlateNumber { get { return _plateNumber; } }
