@@ -31,40 +31,78 @@ namespace Parking_System.Classes
             return true;
         }
 
-        public string GetFaceID() //Invoke Python Script
+        //public string GetFaceID() //Invoke Python Script
+        //{
+
+        //    Process.Start("cmd.exe", "/C python demo.py");
+        //    return "Ahmed";
+        //}
+        #region FaceRecognition
+        public int LoadModel()
         {
-            string cmd = "demp.py";
-            string args = "";
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = "C:\\SourcesPrograms\\Python\\Python.exe";
-            start.Arguments = cmd;//string.Format("{0} {1}", cmd, args);
-            start.UseShellExecute = false;
-            start.RedirectStandardOutput = true;
-            string result = "";
-            using (Process process = Process.Start(start))
-            {
-                using (StreamReader reader = process.StandardOutput)
-                {
-                    result = reader.ReadToEnd();
-                    Console.Write(result);
-                }
-            }
-            return result;
+            int model_flag = 1;
+            Process.Start("cmd.exe", "/C face_recognition.py model_flag");
+
+            return 1;
         }
+        public int Recognize()
+        {
+            //parameters needed for face recogmition
+            int model_flag = 1;
+
+            Process.Start("cmd.exe", "/C C:\\Users\\ahmed\\Documents\\Visual Studio 2022\\Projects\\Parking System\\Aez\\face_recognition.py model_flag");
+            //Invoke the face_recognition code to run and return the User ID if recognized or else return -1
+            //if -1 is  returned Invoke Detection to create a new classfier with this new user
+            String txt_file = System.IO.File.ReadAllText("ID.txt");
+            if (txt_file == "-1")
+            {
+                return -1;
+            }
+
+            return int.Parse(txt_file);
+
+        }
+
+        public void AbortRecognition()
+        {
+            System.IO.File.WriteAllText("Recognition_stop.txt", "0");
+        }
+        #endregion
+        #region FaceDetection
+
+        public int FacesPreprocess(int ID) 
+        {
+            if (IsThereAVehicle())
+            {
+                Process.Start("cmd.exe", "/C data_preprocess.py ID");
+                return 1;
+            }
+            return -1;
+        }
+
+        public int trainModel()
+        {
+            Process.Start("cmd.exe", "/C train_main.py");
+            return 1;
+
+        }
+
+        #endregion
 
         public string GetLP() //Invoke Python Script
         {
+            Process.Start("cmd.exe", "/C C:\\Users\\ahmed\\Documents\\Visual Studio 2022\\Projects\\Parking System\\Aez\\licence_plate.py");
             return "LP";
         }
 
-        public void sendCID_ToServer()
-        {
 
+
+        public void ControlGate(bool instruction)
+        {
+            if (instruction) _gate.Open(); 
+            else _gate.Close() ;
         }
 
-        public void ControlGate()
-        {
 
-        }
     }
 }

@@ -54,6 +54,11 @@ namespace Parking_System.Classes
             return 1.5;
         }
 
+        public void sendCID_ToDatabase()
+        {
+
+        }
+
         public void Activate()
         {
 
